@@ -7,5 +7,19 @@ git submodule update --remote it-academy-hackaton-2024-back
 
 docker-compose up -d
 
-echo Site: http://localhost:8081/
-echo Swagger: http://localhost:8080/swagger/index.html
+clear
+
+GREEN="\e[32m"
+ENDCOLOR="\e[0m"
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo ---------------------------------------------------------
+echo "|                                                       |" 
+echo -e "|  ${GREEN}Succsesful running!${ENDCOLOR}                                  |" 
+echo "|                                                       |" 
+echo -e "| ${bold}- Site:${normal}      http://localhost:8081/                   |"
+echo -e "| ${bold}- Swagger:${normal}   http://localhost:8080/swagger/index.html |"
+echo "|                                                       |" 
+echo ---------------------------------------------------------
