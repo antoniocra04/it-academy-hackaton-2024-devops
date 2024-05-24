@@ -1,0 +1,6 @@
+[submodule "it-academy-hackaton-2024-back"]
+	path = it-academy-hackaton-2024-back
+	url = https://github.com/antoniocra04/it-academy-hackaton-2024-back.git
+[submodule "it-academy-hackaton-2024-front"]
+	path = it-academy-hackaton-2024-front
+	url = https://github.com/antoniocra04/it-academy-hackaton-2024-front.git
