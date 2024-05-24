@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  frontend:
+    build: 
+      context: ./it-academy-hackaton-2024-front
+      dockerfile: ./Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - backend
+    networks:
+      - localhost
+
+  backend:
+    build: 
+      context: ./it-academy-hackaton-2024-back/InterestClubWebAPI
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - localhost
+
+networks:
+  localhost:
+    driver: bridge
