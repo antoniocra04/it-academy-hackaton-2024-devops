@@ -4,7 +4,7 @@ git submodule init
 git submodule update --remote it-academy-hackaton-2024-front
 git submodule update --remote it-academy-hackaton-2024-back
 
-
+docker-compose down --rmi local
 docker-compose up -d
 
 clear
