@@ -11,15 +11,15 @@
 2. Поменяйте IPv4, имя пользователя и путь к приватному ключу SSH в `hosts.ini`
 3. Чтобы загрузить репозиторий, зависимости на сервер и запустить сайт автоматически, используйте:
 ```bash
-    ansible-playbook -i hosts.ini playbook.yml --skip-tags "stop"
+    bash ./remote_init.sh
 ```
 4. Чтобы запустить/перегрузить сайт на сервере, используйте: 
 ```bash
-    ansible-playbook -i hosts.ini playbook.yml --tags "run"
+    bash ./remote_run.sh
 ```
-1. Чтобы выключить сайт на сервере, используйте: 
+5. Чтобы выключить сайт на сервере, используйте: 
 ```bash
-    ansible-playbook -i hosts.ini playbook.yml --tags "stop"
+    bash ./remote_stop.sh
 ```
 
 ### Ручная установка
@@ -42,7 +42,7 @@
 ```
 > Или, если у вас есть консоль Bash:
 > ```bash
->     bash ./run.sh
+>     bash ./local_run.sh
 > ```
 
 4. Чтобы остановить контейнеры и очистить память от `images` возпользуйтесь:
@@ -51,5 +51,5 @@
 ```
 > Либо, если у вас есть консоль Bash:
 > ```bash
->     bash ./stop.sh
+>     bash ./local_stop.sh
 > ```

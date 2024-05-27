@@ -17,10 +17,10 @@
         version: 'main'
       tags: clone_repository
 
-    - name: Run
-      command: chdir=/root/repo bash run.sh
-      tags: run
-
     - name: Stop
-      command: chdir=/root/repo bash stop.sh
+      command: chdir=/root/repo bash local_stop.sh
       tags: stop
+
+    - name: Run
+      command: chdir=/root/repo bash local_run.sh
+      tags: run
