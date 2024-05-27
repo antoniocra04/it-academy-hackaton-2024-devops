@@ -7,7 +7,7 @@ git submodule update --remote it-academy-hackaton-2024-back
 docker-compose down --rmi local
 docker-compose up -d
 
-clear
+#clear
 
 GREEN="\e[32m"
 ENDCOLOR="\e[0m"
