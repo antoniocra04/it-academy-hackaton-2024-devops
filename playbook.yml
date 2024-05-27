@@ -1,0 +1,42 @@
+---
+- name: Deploy application using Docker
+  hosts: servers
+  become: yes
+  tasks:
+    # - name: Install necessary packages
+    #   apt:
+    #     name: 
+    #       - docker
+
+    # - name: Add Docker GPG key
+    #   apt_key:
+    #     url: https://download.docker.com/linux/ubuntu/gpg
+    #     state: present
+
+    # - name: Add Docker repository
+    #   apt_repository:
+    #     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+    #     state: present
+
+    - name: Install Docker
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: yes
+
+    # - name: Install Docker Compose
+    #   get_url:
+    #     url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)
+    #     dest: /usr/local/bin/docker-compose
+    #     mode: '0755'
+    #   run_once: true
+
+    - name: Clone the repository
+      git:
+        repo: 'https://github.com/antoniocra04/it-academy-hackaton-2024-devops.git'
+        dest: /repo
+        version: 'main'
+      
+
+    - name: Run
+      command: bash /repo/run.sh
