@@ -1,20 +1,22 @@
 ---
-- name: Deploy to Server
+- name: deploy to server
   hosts: servers
   become: yes
   tasks:
-    - name: Install Docker
+    - name: install docker
       apt:
         name: docker-ce
         state: latest
         update_cache: yes
 
-    - name: Clone the repository
+    - name: clone repository
       git:
         repo: 'https://github.com/antoniocra04/it-academy-hackaton-2024-devops.git'
         dest: /root/repo
         version: 'main'
-      
 
-    - name: Run
+    - name: run
       command: chdir=/root/repo bash run.sh
+
+    - name: stop
+      command: chdir=/root/repo bash stop.sh
